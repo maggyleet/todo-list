@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Todo List App</title>
+<script defer src="main.js"></script></head>
+
+<body>
+
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="projects">
+                <h2>Projects</h2>
+                <button class="proj-add-btn">&plus;</button>
+            </div>
+            <ul class="lists" id="projectList">
+                <li class="project-item active" data-project="Odin">Odin</li>
+            </ul>
+        </div>
+
+        <!-- Main -->
+        <div class="main">
+            <h2 id="currentProjectTitle">Odin</h2>
+            <button id="addTaskBtn">Add Task</button>
+
+            <div class="task-list" id="taskList">
+                <!-- Tasks will appear here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Project Dialog -->
+    <dialog id="projectDialog">
+        <form method="dialog" class="dialog-form" id="projectForm">
+            <h3>New Project</h3>
+            <input type="text" id="projectName" placeholder="Project Name" required>
+            <button type="submit">Add Project</button>
+            <button type="button" id="closeProjectDialog">Cancel</button>
+        </form>
+    </dialog>
+
+    <!-- Task Dialog -->
+    <dialog id="taskDialog">
+        <form method="dialog" class="dialog-form" id="taskForm">
+            <h3 id="taskDialogTitle">New Task</h3>
+            <input type="text" id="taskTitle" placeholder="Title" required>
+            <textarea id="taskDescription" rows="2" placeholder="Description"></textarea>
+            <input type="date" id="taskDueDate">
+            <select id="taskPriority">
+                <option value="" disabled selected>Priority</option>
+                <option value="High">High</option>
+                <option value="Medium">Medium</option>
+                <option value="Low">Low</option>
+            </select>
+            <textarea id="taskNotes" rows="2" placeholder="Notes (optional)"></textarea>
+            <input type="text" id="taskChecklist" placeholder="Checklist items (comma separated)">
+            <button type="submit" id="submitTaskBtn">Add Task</button>
+            <button type="button" id="closeTaskDialog">Cancel</button>
+        </form>
+    </dialog>
+
+</body>
+
+</html>
